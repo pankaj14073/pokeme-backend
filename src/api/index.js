@@ -7,6 +7,5 @@ module.exports = () => {
     const app = Router.Router();
     //auth(app);
     user(app);
-
     return app;
 };
