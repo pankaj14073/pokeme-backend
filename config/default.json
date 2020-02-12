@@ -1,0 +1,23 @@
+{
+    "userPassword": "f076a0b9-fb78-4fdf-b16f-a0656be55054",
+    "tokenValidation": 86400,
+    "tokenSecret": "2F2EBB7AC4A6D4B4132ECA761AA1F",
+    "saltRounds": 10,
+    "gmail": "campus.hiring@thinkfuture.us",
+    "pass": "C0nfidential!",
+    "gmail2": "naukri@tftus.com",
+    "pass2": "India@4312",
+    "verificationCodeExpiresIn": 120,
+    "baseUrlStaging": "http://203.122.22.235:81/test/info/",
+    "baseUrlProd": "http://203.122.22.235/test/info/",
+    "subject": "Invitation link for Think Future Technology Online Exam",
+    "rejectMailSubject": "Application at Think Future Technologies",
+    "testSubmissionMailSubject": "Test submitted",
+    "isIpfilterAllowded": true,
+    "company": "Company",
+    "gmail3": "recruiter@tftus.com",
+    "testCompletionSubject": "Test Completed",
+    "db": {
+        "url": "mongodb://localhost/pokeme"
+    }
+}
