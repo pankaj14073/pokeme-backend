@@ -1,29 +1,37 @@
-var dbModel=require("./../db/models");
-var userModel=dbModel.User;
+var dbModel = require("./../db/models");
+var userModel = dbModel.User;
 class UserService {
+  async  checkUserExist(email) {
 
-  async  checkUserExist(email){
-       return await db.user.findOne({
-            where: { email: email }
-          });
-
-    }
-    async checkUserValid(email,userPassword){
-        return true;
-    }
-    async addUser(){
-        var newUser = new userModel({
-            name: 'Chris',
-            email: 'test@test.com',
-            password: 'password' 
-          });
-          newUser.save()
-    }
-   async getUser(filter){
-      return  await userModel.find(filter);   
+    var user = await userModel.findOne({
+      where: { email: email }
+    });
+    if (user)
+      return true;
+    else
+      return false;
   }
-   async  getUserById(id){
-     return  await userModel.findById(filter);         
-    }
+  async checkUserValid(email, userPassword) {
+    return true;
+  }
+  async addUser(name, email, password) {
+
+    if (this.checkUserExist(email))
+      throw new Error('Email already registered');
+
+    var newUser = new userModel({
+      name: name,
+      email: email,
+      password: password,
+      username: email
+    });
+    await newUser.save();
+  }
+  async getUser(filter) {
+    return await userModel.find(filter);
+  }
+  async  getUserById(id) {
+    return await userModel.findById(filter);
+  }
 }
-module.exports=new UserService();
+module.exports = new UserService();

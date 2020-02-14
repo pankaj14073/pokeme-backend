@@ -1,19 +1,20 @@
 const express = require('express');
 const router = express();
-const authController = require('../controller/authController');
+const UserController = require('../controller/UserController');
 const jwt = require('express-jwt');
-const asyncMiddleware=require("./../middleware").asyncMiddleware;
+const asyncMiddleware = require("./../middleware").asyncMiddleware;
 router.get(
     '/status',
-    asyncMiddleware(authController.validateUser)
+    asyncMiddleware(UserController.validateUser)
 );
 router.get(
     '/add-user',
-    asyncMiddleware(authController.addUser)
+    asyncMiddleware(UserController.addUser)
 );
 router.get(
     '/get-user',
-    asyncMiddleware(authController.getUser)
+    asyncMiddleware(UserController.getUser)
 );
+
 module.exports = router;
 

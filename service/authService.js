@@ -1,8 +1,7 @@
 
 class AuthService {
-
-    checkUser(userName,password){
+    checkUser(userName, password) {
         return true;
     }
 }
-module.exports=new AuthService();
+module.exports = new AuthService();
